@@ -14,9 +14,8 @@ class HomeController extends Controller
         $sliders = Slider::latest()->take(6)->get() ;
         $categories = Category::where('parent_id',0)->get() ;
         $products = Product::latest()->get() ;
-        
-
-        return view('home.home', compact('sliders','categories','products'));
+        $productRecommends = Product::latest('view_count','desc')->take(12)->get();
+        return view('home.home', compact('sliders','categories','products','productRecommends'));
     }
 
 
