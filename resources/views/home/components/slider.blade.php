@@ -1,4 +1,6 @@
-@php $baseUrl = 'http://127.0.0.1:8000' @endphp
+@php
+    $base_url = config('app.base_url');
+@endphp
 
 <section id="slider"><!--slider-->
     <div class="container">
@@ -21,7 +23,7 @@
                                     <button type="button" class="btn btn-default get">Get it now</button>
                                 </div>
                                 <div class="col-sm-6">
-                                    <img src="{{ $baseUrl . $slider->image_path }}" class="girl img-responsive"
+                                    <img src="{{ $base_url . $slider->image_path }}" class="girl img-responsive"
                                         alt="" />
                                     <img src="/Eshopper/images/home/pricing.png" class="pricing" alt="" />
                                 </div>

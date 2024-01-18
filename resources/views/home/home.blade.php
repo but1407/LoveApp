@@ -34,7 +34,7 @@
 
                 </div>
             </div>
-        </div>
+        </div>x`
     </section>
 @endsection
 
