@@ -1,5 +1,14 @@
 window._ = require('lodash');
 
+import Echo from "laravel-echo"
+
+
+window.Echo = new Echo({
+    broadcaster: 'pusher',
+    key: '5a3aeb6752985eee602d',
+    cluster: 'ap1',
+    encrypted: true
+});
 /**
  * We'll load the axios HTTP library which allows us to easily issue requests
  * to our Laravel back-end. This library automatically handles sending the

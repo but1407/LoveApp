@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\Home\HomeController;
 
 /*
@@ -15,3 +16,5 @@ use App\Http\Controllers\Admin\Home\HomeController;
 */
 
 Route::get('/', [HomeController::class,'index'])->name('home');
+
+Route::get('/category/{slug}/{id}',[CategoryController::class,'index'])->name('category.product');

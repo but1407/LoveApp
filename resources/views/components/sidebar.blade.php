@@ -6,22 +6,33 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h4 class="panel-title">
-                            <a data-toggle="collapse" data-parent="#accordian" href="#sportswear_{{ $category->id }}">
-                                <span class="badge pull-right">
-                                    @if ($category->categoryChild->count())
-                                        <i class="fa fa-plus"></i>
-                                    @endif
+                            @if ($category->categoryChild->count())
+                                <a data-toggle="collapse" data-parent="#accordian" href="#sportswear_{{ $category->id }}">
+                                    <span class="badge pull-right">
+                                        @if ($category->categoryChild->count())
+                                            <i class="fa fa-plus"></i>
+                                        @endif
+                                    </span>
+                                    {{ $category->name }}
+                                </a>
+                            @else
+                                <a
+                                    href="{{ route('category.product', ['slug' => $category_item->slug, 'id' => $category_item->id]) }}">
+                                    <span class="badge pull-right">
 
-                                </span>
-                                {{ $category->name }}
-                            </a>
+                                    </span>
+                                    {{ $category->name }}
+                                </a>
+                            @endif
                         </h4>
                     </div>
                     <div id="sportswear_{{ $category->id }}" class="panel-collapse collapse">
                         <div class="panel-body">
                             <ul>
                                 @foreach ($category->categoryChild as $category_item)
-                                    <li><a href="#">{{ $category_item->name }} </a></li>
+                                    <li><a
+                                            href="{{ route('category.product', ['slug' => $category_item->slug, 'id' => $category_item->id]) }}">{{ $category_item->name }}
+                                        </a></li>
                                 @endforeach
 
                             </ul>

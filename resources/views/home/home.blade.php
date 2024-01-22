@@ -20,7 +20,6 @@
         <div class="container">
             <div class="row">
                 @include('components.sidebar')
-
                 <div class="col-sm-9 padding-right">
                     <div class="features_items"><!--features_items-->
                         @include('home.components.feature_product')
